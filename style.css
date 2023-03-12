@@ -1,0 +1,36 @@
+body{
+    padding:0;
+    margin:0;
+    background-color: rgb(33, 10, 36);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    flex-direction: column;
+}
+h1{
+    color: rgb(111, 19, 134);
+    font-family:'Trebuchet MS';
+    font-size: 150px;
+    
+    text-shadow: 10px 10px #000;
+}
+
+button{
+    height: 75px;
+    width: 250px;
+    font-size: 50px;
+    font-family:'Cambria';
+    background-color: rgb(129, 10, 139);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px;
+}
+
+button:hover{
+    background-color: rgb(151, 13, 163);;
+}
+
+button:active{
+    background-color: rgb(165, 15, 179);;
+}
