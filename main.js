@@ -1,4 +1,4 @@
-const colors = ["red", "blue", "green", "yellow", "purple", "orange"]
+const colors = ["red", "blue", "green", "yellow","orange","purple","pink"]
 let answerList = []
 const content = document.getElementById("content")
 const form = document.getElementById("form")
@@ -20,7 +20,7 @@ function showSquares(answerList){
     }
 }
 async function startGame(viewTime){
-    for (let i=0; i<colors.length; i++){
+    for (let i=0; i<4; i++){
         answerList.push(colors[Math.floor(Math.random()*colors.length)])
     }
     showSquares(answerList)
