@@ -37,7 +37,7 @@ body{
 }
 
 form{
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 input[type=text]{
@@ -65,6 +65,7 @@ button{
     background-color: rgb(49, 9, 53);
     border: none;
     border-radius: 10px;
+    margin-bottom: 25px;
 }
 
 button:hover{

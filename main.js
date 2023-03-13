@@ -1,4 +1,4 @@
-const colors = ["red", "blue", "green", "yellow"]
+const colors = ["red", "blue", "green", "yellow", "purple", "orange"]
 let answerList = []
 const content = document.getElementById("content")
 const form = document.getElementById("form")
@@ -45,5 +45,5 @@ form.addEventListener("submit", (e) => {
     userAnswer.disabled = true
 })
 
-startGame(3000)
+startGame(2000)
 
