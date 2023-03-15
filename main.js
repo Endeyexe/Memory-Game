@@ -16,7 +16,7 @@ function sleep(ms) {
 
 function hideSquares(){
     squares.forEach((square) => {
-        square.style.backgroundColor = "white"
+        square.style.backgroundColor = "#250F25"
         square.innerHTML = ""
     });
 }
@@ -72,6 +72,7 @@ function reset(){
     userAnswer.disabled = true
     content.style.backgroundColor = "#291429"
     userAnswer.value = ""
+    hideSquares()
 }
 
 form.addEventListener("submit", (e) => {
