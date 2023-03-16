@@ -31,7 +31,6 @@ function showSquares(squareList, numList, showNums){
 function disableButtons() {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = true;
-        console.log("works?")
     }
 }
 
@@ -48,7 +47,6 @@ async function startGame(viewTime){
         squareList.push(color)
         numList.push((Math.floor(Math.random()*10)).toString())
     }
-    console.log(numList)
     showSquares(squareList, numList, showNums)
     await sleep(viewTime)
     hideSquares()
@@ -58,9 +56,7 @@ async function startGame(viewTime){
         for (let i = 0; i < squareList.length; i++) {
             answer += `${squareList[i]} ${numList[i]} `
         }
-        console.log(answer)
         answer = answer.trim() //to remove extra space at end
-        console.log(answer)
     }
     else{answer = squareList.join(" ")}
 }
@@ -81,9 +77,7 @@ form.addEventListener("submit", (e) => {
         content.style.backgroundColor = "lime"
     }
     else{
-        console.log("WRONG")
         content.style.backgroundColor = "maroon"
-        userAnswer.value = answer
     }
     showSquares(squareList, numList, showNums)
     userAnswer.disabled = true
