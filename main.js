@@ -1,10 +1,10 @@
 const colors = ["red", "blue", "green", "yellow","orange","purple","pink"]
-let squareList = []
+let boxList = []
 let numList = []
 const content = document.getElementById("content")
 const form = document.getElementById("form")
 const userAnswer = document.getElementById('answer')
-const squares = document.querySelectorAll('.square')
+const boxes = document.querySelectorAll('.boxes')
 const modes = document.getElementById('modes')
 const buttons = modes.getElementsByTagName("button")
 let answer = ""
@@ -14,17 +14,17 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function hideSquares(){
-    squares.forEach((square) => {
-        square.style.backgroundColor = "#250F25"
-        square.innerHTML = ""
+function hideBoxes(){
+    boxes.forEach((box) => {
+        box.style.backgroundColor = "#250F25"
+        box.innerHTML = ""
     });
 }
 
-function showSquares(squareList, numList, showNums){
-    for (let i=0; i<squareList.length; i++){
-        squares[i].style.backgroundColor = squareList[i];
-        if(showNums){squares[i].innerHTML = numList[i]}
+function showBoxes(boxList, numList, showNums){
+    for (let i=0; i<boxList.length; i++){
+        boxes[i].style.backgroundColor = boxList[i];
+        if(showNums){boxes[i].innerHTML = numList[i]}
     }
 }
 
@@ -44,31 +44,31 @@ async function startGame(viewTime){
     disableButtons()
     for (let i=0; i<4; i++){
         let color = colors[Math.floor(Math.random()*colors.length)]
-        squareList.push(color)
+        boxList.push(color)
         numList.push((Math.floor(Math.random()*10)).toString())
     }
-    showSquares(squareList, numList, showNums)
+    showBoxes(boxList, numList, showNums)
     await sleep(viewTime)
-    hideSquares()
+    hideBoxes()
     userAnswer.disabled = false
     userAnswer.focus()
     if (showNums) {
-        for (let i = 0; i < squareList.length; i++) {
-            answer += `${squareList[i]} ${numList[i]} `
+        for (let i = 0; i < boxList.length; i++) {
+            answer += `${boxList[i]} ${numList[i]} `
         }
         answer = answer.trim() //to remove extra space at end
     }
-    else{answer = squareList.join(" ")}
+    else{answer = boxList.join(" ")}
 }
 
 function reset(){
-    squareList = []
+    boxList = []
     numList = []
     answer = ""
     userAnswer.disabled = true
     content.style.backgroundColor = "#291429"
     userAnswer.value = ""
-    hideSquares()
+    hideBoxes()
 }
 
 form.addEventListener("submit", (e) => {
@@ -79,7 +79,7 @@ form.addEventListener("submit", (e) => {
     else{
         content.style.backgroundColor = "maroon"
     }
-    showSquares(squareList, numList, showNums)
+    showBoxes(boxList, numList, showNums)
     userAnswer.disabled = true
     enableButtons()
 })
